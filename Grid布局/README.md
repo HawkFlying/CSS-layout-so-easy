@@ -107,6 +107,8 @@ Grid 布局(*网格布局*)是 CSS 最新的也是最强大的一种布局方案
 
 ### grid-template 属性
 
+#### `grid-template-columns` 属性 和 `grid-template-rows` 属性
+
 `grid-template-columns` 属性 和 `grid-template-rows` 属性,用来指定网格的列宽以及行高，以空格分隔，语法结构如下：
 
 ```css
@@ -120,6 +122,66 @@ Grid 布局(*网格布局*)是 CSS 最新的也是最强大的一种布局方案
 
 - 轨道大小(*track-size*): 可以使用任意 css 长度、百分比、或者分数、或者 `fr` 单位。
 - 网格线名字(*line-name*): 可以选择任意名字
+
+示例代码如下：
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>grid-template 属性</title>
+        <link rel="stylesheet" href="./init.css" />
+        <style>
+            .container {
+                background-color: #fef3c9;
+                display: grid;
+                width: 1600px;
+                height: 800px;
+                margin: 0 auto;
+                grid-template-columns: 300px auto 300px 20%;
+                grid-template-rows: 1fr 1fr;
+            }
+            .item2,
+            .item3,
+            .item6,
+            .item7 {
+                width: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item1 item">1</div>
+            <div class="item2 item">2</div>
+            <div class="item3 item">3</div>
+            <div class="item4 item">4</div>
+            <div class="item5 item">5</div>
+            <div class="item6 item">6</div>
+            <div class="item7 item">7</div>
+            <div class="item8 item">8</div>
+        </div>
+    </body>
+</html>
+```
+
+执行结果如下所示：
+
+![image-20210508222658446](http://img.seecode.cc//picgo/image-20210508222658446.png)
+
+#### 网格线的名称
+
+`grid-template-columns` 属性 和 `grid-template-rows` 属性 里面，还可以使用方括号 `[]` ，指定每一根网格线的名字，方便以后的引用。
+
+示例代码如下：
+
+```html
+
+```
+
+
 
 ### gap 属性
 
