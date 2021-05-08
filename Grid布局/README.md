@@ -178,10 +178,45 @@ Grid 布局(*网格布局*)是 CSS 最新的也是最强大的一种布局方案
 示例代码如下：
 
 ```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>网格线的名称</title>
+        <link rel="stylesheet" href="./init.css" />
+        <style>
+            .container {
+                background-color: #fef3c9;
+                display: grid;
+                width: 1600px;
+                height: 700px;
+                margin: 0 auto;
+                grid-template-columns: [c1] 320px [c2] 3fr [c3] 2fr [c4] 20% [c5];
+                grid-template-rows: [r1] 1fr [r2] 1fr [r3];
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item1 item">1</div>
+            <div class="item2 item">2</div>
+            <div class="item3 item">3</div>
+            <div class="item4 item">4</div>
+            <div class="item5 item">5</div>
+            <div class="item6 item">6</div>
+            <div class="item7 item">7</div>
+            <div class="item8 item">8</div>
+        </div>
+    </body>
+</html>
 
 ```
 
+效果图如下：
 
+![image-20210508224148105](http://img.seecode.cc//picgo/image-20210508224148105.png)
 
 ### gap 属性
 
