@@ -218,6 +218,72 @@ Grid 布局(*网格布局*)是 CSS 最新的也是最强大的一种布局方案
 
 ![image-20210508224148105](http://img.seecode.cc//picgo/image-20210508224148105.png)
 
+#### `repeat()` 函数
+
+有的时候，我们需要编写同样的值，尤其是在网格多的时候，就显得尤为的麻烦，这个时候 `repeat()` 函数就帮助我们解决了这个问题。
+
+该函数适用于 CSS Grid 属性中 `grid-template-columns` 和 `grid-template-rows`.语法规则如下：
+
+```css
+.container {
+  grid-template-columns: repeat(repeat, value);
+}
+```
+
+**属性值**：
+
+- `repeat`: 表示重复的次数
+
+  **可选值**：
+
+  - `number`: 整数，确定确切的重复次数
+  - `auto-fill`: 以网格项为准自动填充
+  - `auto-fit`: 以网格容器为准自动填充
+
+- `value`: 表示重复的值
+
+  **可选值**：
+
+  - `length`: 非负长度
+  - `percentage`: 相对于列轨道中网格容器的内联大小的非负百分比，以及行轨道中网格容器的块长宽。
+  - `flex`: 单位为 fr 的非负维度，指定轨道弹性布局的系数值。
+
+示例代码如下所示：
+
+```css
+.container {
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  /* 等于 */
+  grid-template-columns: repeat(6, 1fr);
+}
+```
+
+#### `minmax()` 函数
+
+`minmax()` 函数定义了一个长宽范围的闭区间，该函数适用于 CSS Grid 属性中 `grid-template-columns` 和 `grid-template-rows` 语法规则如下：
+
+```css
+.container {
+  grid-template-columns: minmax(minValue, maxValue);
+}
+```
+
+**可选值**：
+
+- `length`: 非负长度
+- `percentage`: 相对于列轨道中网格容器的内联大小的非负百分比，以及行轨道中网格容器的块长宽。
+- `flex`: 单位为 fr 的非负维度，指定轨道弹性布局的系数值。
+
+示例代码如下所示：
+
+```css
+.container {
+  grid-template-columns: minmax(100px, 400px);
+}
+```
+
+> 最小`100px`最大`400px`
+
 #### `grid-template-areas` 属性
 
 通过引用 `grid-area` 属性指定的网格区域的名称来定义网格模板。语法结构如下：
