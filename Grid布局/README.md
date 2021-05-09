@@ -105,7 +105,7 @@ Grid 布局(*网格布局*)是 CSS 最新的也是最强大的一种布局方案
 
 ![image-20210508214141493](http://img.seecode.cc//picgo/image-20210508214141493.png)
 
-### grid-template 属性
+### grid-template
 
 #### `grid-template-columns` 属性 和 `grid-template-rows` 属性
 
@@ -311,7 +311,69 @@ Grid 布局(*网格布局*)是 CSS 最新的也是最强大的一种布局方案
 >
 > 比如，区域名为 `header` ，则起始位置的水平网格线和垂直网格线叫做 `header-start` ，终止位置的水平网格线和垂直网格线叫做 `header-end` 。
 
+#### 	
+
+该属性是 `grid-template-rows` 、 `grid-template-columns` 和 `grid-template-areas` 属性的简写。语法结构如下所示：
+
+```css
+.container {
+  grid-template: none | [ <'grid-template-rows'> / <'grid-template-columns'> ] | [ <line-names>? <string> <track-size>? <line-names>? ]+ [ / <explicit-track-list> ]? ;
+}
+```
+
+**属性值**
+
+- `none`: 将三个属性都设置为初始值，也就是一行一列一区域(了解)。
+- `grid-template-rows / grid-template-columns`: 把  `grid-template-rows` 和 `grid-template-columns` 设置为指定值，于此同时，设置 `grid-template-areas` 为 `none`
+- `[ <line-names>? <string> <track-size>? <line-names>? ]+ [ / <explicit-track-list> ]?`: 设 `grid-template-areas` 为列得 `<string>` 、 `grid-template-columns` 为 `<explicit-track-list>` （默认为`none`）、 `grid-template-rows` 为 `<track-size>`（默认为`auto`）并拼接尺寸前后所定义之行。
+
+示例代码如下所示：
+
+```css
+grid-template-areas:
+            'header header'
+            'nav main'
+            'footer footer';
+grid-template-columns: 300px 1fr;
+grid-template-rows: 200px auto 200px;
+
+/* 简写如下 */
+
+grid-template:
+              [row1-start] 'header header' 200px [row1-end]
+              [row2-start] 'nav main' auto [row2-end]
+              [row3-start] 'footer footer' 200px [row3-end]
+              / 300px 1fr;
+```
+
+> 上面两个代码最终的执行效果是相同的。
+
+不过按照代码的可读性来看，**并不推荐使用简写方式**
+
 ### gap 属性
+
+`gap` 属性是 `column-gap` 和 `row-gap` 属性的简写。
+
+该属性用于指定网格线的大小，可以想象为设置列 / 行之间的间距的宽度。语法结构如下：
+
+```css
+.contianer {
+  column-gap: <line-size>;
+  row-gap: <line-size>;
+  /* 如果省略第二个值，浏览器认为第二个值等于第一个值。 */
+  gap: <line-size> <line-size>;
+}
+```
+
+**属性值**
+
+- `<line-size>`: 长度值，例如 `20px`。
+
+
+
+> 值得注意的是 `gap` 、`column-gap` 和 `row-gap`  属性在之前是有 `grid-` 的前缀的，即 `grid-gap` 、`grid-column-gap` 和 `grid-row-gap`。在使用的过程中，为了保证有效，我们可以这两个属性一起写。
+
+
 
 ### items 属性
 
