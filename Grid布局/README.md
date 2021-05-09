@@ -608,4 +608,45 @@ grid-template:
 
 ### grid-auto 属性
 
+#### `grid-auto-columns` 属性 和 `grid-auto-rows` 属性
+
+该组属性指定自动生成的网络轨道(隐式网络轨道)的大小
+
+> 隐式网络轨道在显示的定位超出指定网格范围的行或列时被创建。
+
+它们的写法与`grid-template-columns`和`grid-template-rows`相同。如果不指定此属性，浏览器完全根据单元格内容的大小，决定新增网格的列宽和行高。
+
+#### `grid-auto-flow` 属性
+
+该属性控制自动布局算法的工作方式。语法结构如下
+
+```css
+.container {
+  grid-auto-flow: [ row | column ] || dense
+}
+```
+
+**属性值**：
+
+- `row`: 告诉自动布局算法依次填充每行，根据需要添加新行
+- `column`: 告诉自动布局算法依次填充每列，根据需要添加新列
+- `dense`: 告诉自动布局算法，如果后面出现较小的网格项,则尝试在网格中填充空洞
+
 ### grid 属性
+
+grid 是一个CSS简写属性，可以用来设置以下属性：
+
+显式网格属性 `grid-template-rows`、`grid-template-columns` 和 `grid-template-areas`，
+隐式网格属性 `grid-auto-rows`、`grid-auto-columns` 和  `grid-auto-flow`，
+间距属性 `grid-column-gap` 和 `grid-row-gap`。
+
+语法结构如下：
+
+```css
+.contaienr {
+  grid: <'grid-template'> | <'grid-template-rows'> / [ auto-flow && dense? ] <'grid-auto-columns'>? | [ auto-flow && dense? ] <'grid-auto-rows'>? / <'grid-template-columns'>;
+}
+```
+
+> 该语法不易读，在实际开发中并推荐使用该语法。
+
