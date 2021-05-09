@@ -352,7 +352,7 @@ grid-template:
 
 ### gap 属性
 
-`gap` 属性是 `column-gap` 和 `row-gap` 属性的简写。
+`gap` 属性是 row-gap` 和 `column-gap` 属性的简写。
 
 该属性用于指定网格线的大小，可以想象为设置列 / 行之间的间距的宽度。语法结构如下：
 
@@ -369,15 +369,242 @@ grid-template:
 
 - `<line-size>`: 长度值，例如 `20px`。
 
+示例代码如下(基于上面那一段代码来写)：
 
+```css
+.container {
+  /* 写法 1 */
+  column-gap: 10px;
+  row-gap: 10px;
+  /* 写法 2 */
+  gap: 10px 10px;
+  /* 写法 3 */
+  gap: 10px;
+}
+```
+
+执行结果如下：
+
+![image-20210509150302498](http://img.seecode.cc//picgo/image-20210509150302498.png)
 
 > 值得注意的是 `gap` 、`column-gap` 和 `row-gap`  属性在之前是有 `grid-` 的前缀的，即 `grid-gap` 、`grid-column-gap` 和 `grid-row-gap`。在使用的过程中，为了保证有效，我们可以这两个属性一起写。
 
-
-
 ### items 属性
 
+#### `align-items` 属性
+
+沿着**列轴**对齐网格内的内容。语法结构如下：
+
+```css
+.container {
+  align-items: start | end | center | stretch;
+}
+```
+
+**属性值**：
+
+- `start`: 内容与网格区域的顶端对齐
+- `end`: 内容与网格区域的底部对齐
+- `center`: 内容位于网格区域的垂直中心位置
+- `stretch`: 内容高度占据整个网格区域空间(默认值)
+
+#### `justify-items` 属性
+
+沿着**行轴**对齐网格内的内容。语法结构如下：
+
+```css
+.container {
+  justify-items: start | end | center | stretch;
+}
+```
+
+**属性值**：
+
+- `start`: 内容与网格区域的左端对齐
+- `end`: 内容与网格区域的右部对齐
+- `center`: 内容位于网格区域的水平中心位置
+- `stretch`: 内容高度占据整个网格区域空间(默认值)
+
+#### `place-items` 属性
+
+`place-items` 是一个简写属性，使用此属性可以同时设置**列轴**对齐和**行轴**对齐，语法结构如下所示：
+
+```css
+.container {
+  place-items: align-items justify-items;
+}
+```
+
+如果只写一个值，第二个值默认与第一个值相同。
+
+示例代码如下所示：
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>grid-template 属性</title>
+        <link rel="stylesheet" href="./init.css" />
+        <style>
+            .container {
+                background-color: #fef3c9;
+                display: grid;
+                width: 1600px;
+                height: 800px;
+                margin: 0 auto;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                /* align-items 属性，控制网格项垂直对齐方式 */
+                align-items: end;
+                /* justify-items 属性，控制网格项水平对齐方式 */
+                justify-items: center;
+                /* 
+                    place-items 属性，是 align-items 属性 和 justify-items 的简写形式 
+                    如果只写一个值，第二个值默认与第一个值相同
+                */
+                place-items: end center;
+            }
+            .item {
+                height: 200px;
+                width: 200px;
+                line-height: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item1 item">1</div>
+            <div class="item2 item">2</div>
+            <div class="item3 item">3</div>
+            <div class="item4 item">4</div>
+            <div class="item5 item">5</div>
+            <div class="item6 item">6</div>
+            <div class="item7 item">7</div>
+            <div class="item8 item">8</div>
+        </div>
+    </body>
+</html>
+
+```
+
+执行结果如下所示：
+
+![image-20210509165817094](http://img.seecode.cc//picgo/image-20210509165817094.png)
+
 ### content 属性
+
+#### `align-content ` 属性
+
+设置网格容器内的网格沿着**列轴**对齐网格的对齐方式。语法结构如下：
+
+```css
+.container {
+  align-content : start | end | center | stretch | space-around | space-between | space-evenly;
+}
+```
+
+**属性值**：
+
+- `start`: 网格与网格容器的顶部对齐
+- `end`: 网格与网格容器的底部对齐
+- `center`: 网格与网格容器的垂直中间对齐
+- `stretch`: 调整网格项的大小，让高度填充整个网格容器
+- `space-around`:在网格项之间设置均等高度的空白间隙,其外边缘间隙大小为中间空白间隙宽度的一伴
+- `space-between`:在网格项之间设置均等高度空白间隙，其外边缘无间隙
+- `space-evenly`:在每个网格项之间设置均等高度的空白间隙,包括外边缘
+
+#### `justify-content ` 属性
+
+设置网格容器内的网格沿着**行轴**对齐网格的对齐方式。语法结构如下：
+
+```css
+.container {
+  align-content : start | end | center | stretch | space-around | space-between | space-evenly;
+}
+```
+
+**属性值**：
+
+- `start`: 网格与网格容器的左部对齐
+- `end`: 网格与网格容器的右部对齐
+- `center`: 网格与网格容器的水平中间对齐
+- `stretch`: 调整网格项的大小，让高度填充整个网格容器
+- `space-around`:在网格项之间设置均等宽度的空白间隙,其外边缘间隙大小为中间空白间隙宽度的一伴
+- `space-between`:在网格项之间设置均等宽度空白间隙，其外边缘无间隙
+- `space-evenly`:在每个网格项之间设置均等宽度的空白间隙,包括外边缘
+
+#### `place-content` 属性
+
+`place-content` 属性是 `align-content` 和 `justify-content` 的简写属性，，语法结构如下所示：
+
+```css
+.container {
+  place-content: align-content justify-content;
+}
+```
+
+如果只写一个值，第二个值默认与第一个值相同。
+
+示例代码如下所示：
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>content 属性</title>
+        <link rel="stylesheet" href="./init.css" />
+        <style>
+            .container {
+                background-color: #fffae8;
+                display: grid;
+                width: 1600px;
+                height: 800px;
+                margin: 0 auto;
+                grid-template-columns: 300px 300px 300px 300px;
+                grid-template-rows: 300px 300px;
+                place-items: center;
+                /* align-content 属性，控制网格容器垂直对齐方式 */
+                align-content: space-around;
+                /* justify-content 属性，控制网格容器水平对齐方式 */
+                justify-content: space-around;
+                /* 
+                    place-content 属性，是 align-content 属性 和 justify-content 的简写形式 
+                    如果只写一个值，第二个值默认与第一个值相同
+                */
+                place-content: space-around;
+            }
+            .item {
+                height: 200px;
+                width: 200px;
+                line-height: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item1 item">1</div>
+            <div class="item2 item">2</div>
+            <div class="item3 item">3</div>
+            <div class="item4 item">4</div>
+            <div class="item5 item">5</div>
+            <div class="item6 item">6</div>
+            <div class="item7 item">7</div>
+            <div class="item8 item">8</div>
+        </div>
+    </body>
+</html>
+
+```
+
+执行结果如下图所示：
+
+![image-20210509174704749](http://img.seecode.cc//picgo/image-20210509174704749.png)
 
 ### grid-auto 属性
 

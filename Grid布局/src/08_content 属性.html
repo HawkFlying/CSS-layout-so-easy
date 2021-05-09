@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>content 属性</title>
+        <link rel="stylesheet" href="./init.css" />
+        <style>
+            .container {
+                background-color: #fffae8;
+                display: grid;
+                width: 1600px;
+                height: 800px;
+                margin: 0 auto;
+                grid-template-columns: 300px 300px 300px 300px;
+                grid-template-rows: 300px 300px;
+                place-items: center;
+                /* align-content 属性，控制网格容器垂直对齐方式 */
+                align-content: space-around;
+                /* justify-content 属性，控制网格容器水平对齐方式 */
+                justify-content: space-around;
+                /* 
+                    place-content 属性，是 align-content 属性 和 justify-content 的简写形式 
+                    如果只写一个值，第二个值默认与第一个值相同
+                */
+                place-content: space-around;
+            }
+            .item {
+                height: 200px;
+                width: 200px;
+                line-height: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item1 item">1</div>
+            <div class="item2 item">2</div>
+            <div class="item3 item">3</div>
+            <div class="item4 item">4</div>
+            <div class="item5 item">5</div>
+            <div class="item6 item">6</div>
+            <div class="item7 item">7</div>
+            <div class="item8 item">8</div>
+        </div>
+    </body>
+</html>

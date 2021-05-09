@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>grid-template 属性</title>
+        <link rel="stylesheet" href="./init.css" />
+        <style>
+            .container {
+                background-color: #fef3c9;
+                display: grid;
+                width: 1600px;
+                height: 800px;
+                margin: 0 auto;
+                grid-template-columns: 1fr 1fr 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+                /* align-items 属性，控制网格项垂直对齐方式 */
+                align-items: end;
+                /* justify-items 属性，控制网格项水平对齐方式 */
+                justify-items: center;
+                /* 
+                    place-items 属性，是 align-items 属性 和 justify-items 的简写形式 
+                    如果只写一个值，第二个值默认与第一个值相同
+                */
+                place-items: end center;
+            }
+            .item {
+                height: 200px;
+                width: 200px;
+                line-height: 200px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item1 item">1</div>
+            <div class="item2 item">2</div>
+            <div class="item3 item">3</div>
+            <div class="item4 item">4</div>
+            <div class="item5 item">5</div>
+            <div class="item6 item">6</div>
+            <div class="item7 item">7</div>
+            <div class="item8 item">8</div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>grid-template属性</title>
+        <link rel="stylesheet" href="./init.css" />
+        <style>
+            .container {
+                background-color: #fef3c9;
+                display: grid;
+                width: 1600px;
+                height: 800px;
+                margin: 0 auto;
+                grid-template-areas:
+                    'header header'
+                    'nav main'
+                    'footer footer';
+                grid-template-columns: 300px 1fr;
+                grid-template-rows: 200px auto 200px;
+                /* 写法 1 */
+                column-gap: 10px;
+                row-gap: 10px;
+                /* 写法 2 */
+                gap: 10px 10px;
+                /* 写法 3 */
+                gap: 10px;
+            }
+            .item {
+                width: auto;
+                height: 200px;
+                line-height: 200px;
+            }
+            .header {
+                grid-area: header;
+            }
+            .nav {
+                grid-area: nav;
+            }
+            .main {
+                grid-area: main;
+            }
+            .footer {
+                grid-area: footer;
+            }
+            .nav,
+            .main {
+                height: auto;
+                line-height: 400px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item1 item header">header</div>
+            <div class="item2 item nav">nav</div>
+            <div class="item3 item main">main</div>
+            <div class="item4 item footer">footer</div>
+        </div>
+    </body>
+</html>
