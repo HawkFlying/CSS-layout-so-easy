@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>grid-template-areas 属性</title>
+        <link rel="stylesheet" href="./init.css" />
+        <style>
+            .container {
+                background-color: #fef3c9;
+                /* 1. 设置容器元素为 网格容器  */
+                display: grid;
+                width: 1600px;
+                height: 800px;
+                margin: 0 auto;
+                /* 划分区域，当前区域为 三行 两列 */
+                grid-template-areas:
+                    'header header'
+                    'nav main'
+                    'footer footer';
+                /* 3. 设置各区域的宽度和高度 */
+                grid-template-columns: 300px 1fr;
+                grid-template-rows: 200px auto 200px;
+            }
+            .item {
+                width: auto;
+                height: 200px;
+                line-height: 200px;
+            }
+            .header {
+                /* 4. 指定当前元素所在的区域位置，从 grid-template-areas 选取值 */
+                grid-area: header;
+            }
+            .nav {
+                /* 4. 指定当前元素所在的区域位置，从 grid-template-areas 选取值 */
+                grid-area: nav;
+            }
+            .main {
+                /* 4. 指定当前元素所在的区域位置，从 grid-template-areas 选取值 */
+                grid-area: main;
+            }
+            .footer {
+                /* 4. 指定当前元素所在的区域位置，从 grid-template-areas 选取值 */
+                grid-area: footer;
+            }
+            .nav,
+            .main {
+                height: auto;
+                line-height: 400px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item1 item header">header</div>
+            <div class="item2 item nav">nav</div>
+            <div class="item3 item main">main</div>
+            <div class="item4 item footer">footer</div>
+        </div>
+    </body>
+</html>

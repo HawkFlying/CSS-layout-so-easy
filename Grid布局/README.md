@@ -20,15 +20,15 @@ Grid 布局(*网格布局*)是 CSS 最新的也是最强大的一种布局方案
 
 **网格轨道**: 一个网格轨道就是网格中任意两条线之间的空间。在下图中你可以看到一个高亮的轨道——网格的第一个行轨道。
 
-![1_Grid_Track.png (600×400) (mozit.cloud)](http://img.seecode.cc//picgo/1_Grid_Track.png)
+![1_Grid_Track](http://img.seecode.cc//picgo/1_Grid_Track.png)
 
 **网格单元**: 两个相邻的列网格线和两个相邻的行网格线组成的是网格单元。在下面的图中，我会将第一个网格单元作高亮处理。
 
-![1_Grid_Cell.png (600×400) (mozit.cloud)](http://img.seecode.cc//picgo/1_Grid_Cell.png)
+![1_Grid_Cell](http://img.seecode.cc//picgo/1_Grid_Cell.png)
 
 **网格区域**: 四个网格线包围的总空间。下图高亮的网格区域扩展了2列以及2行。
 
-![1_Grid_Area.png (600×400) (mozit.cloud)](http://img.seecode.cc//picgo/1_Grid_Area.png)
+![1_Grid_Area](http://img.seecode.cc//picgo/1_Grid_Area.png)
 
 **fr (单位)**: 剩余空间分配数。用于在一系列长度值中分配剩余空间，如果多个已指定了多个部分，则剩下的空间根据各自的数字按比例分配。
 
@@ -217,6 +217,99 @@ Grid 布局(*网格布局*)是 CSS 最新的也是最强大的一种布局方案
 效果图如下：
 
 ![image-20210508224148105](http://img.seecode.cc//picgo/image-20210508224148105.png)
+
+#### `grid-template-areas` 属性
+
+通过引用 `grid-area` 属性指定的网格区域的名称来定义网格模板。语法结构如下：
+
+```css
+.contaienr {
+  grid-template-areas: none |
+    'grid-area-name | . grid-area-name | . grid-area-name | . ...'
+    'grid-area-name | . grid-area-name | . grid-area-name | . ...'
+}
+```
+
+**属性值**
+
+- `grid-area-name`: 使用 `grid-area` 属性设置的网格区域名称
+- `.` : 点号表示一个空网格单元
+- `none`: 没有定义网格区域。
+
+示例代码如下
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>grid-template-areas 属性</title>
+        <link rel="stylesheet" href="./init.css" />
+        <style>
+            .container {
+                background-color: #fef3c9;
+                /* 1. 设置容器元素为 网格容器  */
+                display: grid;
+                width: 1600px;
+                height: 800px;
+                margin: 0 auto;
+                /* 划分区域，当前区域为 三行 两列 */
+                grid-template-areas:
+                    'header header'
+                    'nav main'
+                    'footer footer';
+                /* 3. 设置各区域的宽度和高度 */
+                grid-template-columns: 300px 1fr;
+                grid-template-rows: 200px auto 200px;
+            }
+            .item {
+                width: auto;
+                height: 200px;
+                line-height: 200px;
+            }
+            .header {
+                /* 4. 指定当前元素所在的区域位置，从 grid-template-areas 选取值 */
+                grid-area: header;
+            }
+            .nav {
+                /* 4. 指定当前元素所在的区域位置，从 grid-template-areas 选取值 */
+                grid-area: nav;
+            }
+            .main {
+                /* 4. 指定当前元素所在的区域位置，从 grid-template-areas 选取值 */
+                grid-area: main;
+            }
+            .footer {
+                /* 4. 指定当前元素所在的区域位置，从 grid-template-areas 选取值 */
+                grid-area: footer;
+            }
+            .nav,
+            .main {
+                height: auto;
+                line-height: 400px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item1 item header">header</div>
+            <div class="item2 item nav">nav</div>
+            <div class="item3 item main">main</div>
+            <div class="item4 item footer">footer</div>
+        </div>
+    </body>
+</html>
+```
+
+执行结果如下：
+
+![image-20210509134334506](http://img.seecode.cc//picgo/image-20210509134334506.png)
+
+> **值得注意的是**区域的命名会影响到网格线。每个区域的起始网格线，会自动命名为 `区域名-start` ，终止网格线自动命名为 `区域名-end` 。
+>
+> 比如，区域名为 `header` ，则起始位置的水平网格线和垂直网格线叫做 `header-start` ，终止位置的水平网格线和垂直网格线叫做 `header-end` 。
 
 ### gap 属性
 
