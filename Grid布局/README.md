@@ -1093,3 +1093,5 @@ grid 是一个CSS简写属性，可以用来设置以下属性：
 ![image-20210509211320577](http://img.seecode.cc//picgo/image-20210509211320577.png)
 
 (完)
+
+> PS: 关于 Grid 布局有一个小游戏可以帮助我们练习 [Grid Garden - 一个用来学CSS grid的游戏](https://cssgridgarden.com/#zh-cn)
