@@ -2,6 +2,8 @@
 
 > **古之立大事者，不惟有超世之才，亦必有坚韧不拔之志** —— 苏轼
 
+[toc]
+
 ## 写在前面
 
 Grid 布局(*网格布局*)是 CSS 最新的也是最强大的一种布局方案。
@@ -973,7 +975,121 @@ grid 是一个CSS简写属性，可以用来设置以下属性：
 }
 ```
 
-### grid-area
+### grid-area 属性
+
+`grid-area` 属性用来指定网格项的区域，该属性可以理解为是 `grid-column-start` 、`grid-row-start` 、`grid-column-end` 、`grid-row-end` 这四个属性的简写。语法结构如下所示：
+
+```css
+.item {
+  grid-area: <name> | <row-start> / <column-start> / <row-end> / <column-end> 
+}
+```
+
+**属性值**：
+
+- `name`: `grid-template-areas` 中定义的命名。
+- `<row-start> / <column-start> / <row-end> / <column-end>`: 值为  `<number> | <name> | span <number> | span <name> | auto` 其中一种。
+
+示例代码如下所示：
+
+```css
+.item1 {
+  /* 
+    第一个 1 表示 grid-row-start: 1
+    第二个 1 表示 grid-columns-start: 1
+    第一个 3 表示 grid-row-end: 3
+    第二个 3 表示 grid-columns-end: 3
+  */
+  grid-area: 1 / 1 / 3 / 3;
+}
+```
+
+效果图如下：
+
+![image-20210509194719268](http://img.seecode.cc//picgo/image-20210509194719268.png)
 
 ### self
 
+#### 1. `align-self` 属性
+
+沿着列轴对齐网格项里面的内容，语法格式如下：
+
+```css
+.container {
+  align-self: start | end | center | stretch;
+}
+```
+
+#### 2. `justify-self` 属性
+
+沿着**行轴**对齐网格项里面的内容，语法格式如下：
+
+```css
+.container {
+  justify-self: start | end | center | stretch;
+}
+```
+
+#### 2. `place-self` 属性
+
+`place-self` 是一个简写属性，使用此属性可以同时设置**列轴**对齐和**行轴**对齐，语法结构如下：
+
+```css
+.container {
+  place-self: start | end | center | stretch;
+}
+```
+
+示例代码如下所示：
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>self 属性</title>
+        <link rel="stylesheet" href="./init.css" />
+        <style>
+            .container {
+                background-color: #fffae8;
+                display: grid;
+                width: 800px;
+                height: 800px;
+                margin: 0 auto;
+                grid-template-columns: repeat(2, 400px);
+                grid-template-rows: repeat(2, 400px);
+            }
+            .item {
+                /* 所有item都居中 */
+                place-self: center;
+            }
+            .item1 {
+                /* item1水平靠右 垂直靠上 */
+                justify-self: end;
+                align-self: start;
+            }
+            .item2 {
+                /* item2水平靠左 垂直靠下 */
+                justify-self: start;
+                align-self: end;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item1 item">1</div>
+            <div class="item2 item">2</div>
+            <div class="item3 item">3</div>
+            <div class="item4 item">4</div>
+        </div>
+    </body>
+</html>
+```
+
+执行结果如下所示：
+
+![image-20210509211320577](http://img.seecode.cc//picgo/image-20210509211320577.png)
+
+(完)

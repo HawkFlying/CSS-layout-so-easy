@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>self 属性</title>
+        <link rel="stylesheet" href="./init.css" />
+        <style>
+            .container {
+                background-color: #fffae8;
+                display: grid;
+                width: 800px;
+                height: 800px;
+                margin: 0 auto;
+                grid-template-columns: repeat(2, 400px);
+                grid-template-rows: repeat(2, 400px);
+            }
+            .item {
+                /* 所有item都居中 */
+                place-self: center;
+            }
+            .item1 {
+                /* item1水平靠右 垂直靠上 */
+                justify-self: end;
+                align-self: start;
+            }
+            .item2 {
+                /* item2水平靠左 垂直靠下 */
+                justify-self: start;
+                align-self: end;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item1 item">1</div>
+            <div class="item2 item">2</div>
+            <div class="item3 item">3</div>
+            <div class="item4 item">4</div>
+        </div>
+    </body>
+</html>
