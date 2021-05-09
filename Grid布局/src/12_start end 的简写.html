@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>start / end 的简写</title>
+        <link rel="stylesheet" href="./init.css" />
+        <style>
+            .container {
+                background-color: #fffae8;
+                display: grid;
+                width: 920px;
+                height: 820px;
+                margin: 0 auto;
+                grid-template-columns: [c1] 300px [c2] 300px [c3] 300px [c4];
+                grid-template-rows: [r1] 200px [r2] 200px [r3] 200px [r4];
+                gap: 10px;
+            }
+            .item {
+                line-height: 200px;
+                height: 200px;
+            }
+            .item1 {
+                /* 1. 纯数字写法 */
+                grid-column: 1 / 3;
+                grid-row: 1 / 3;
+
+                /* 2. 纯名字写法 */
+                grid-column: c1 / c3;
+                grid-row: r1 / r3;
+
+                /* 3. 数字 + span 数字 */
+                grid-column: 1 / span 2;
+                grid-row: 1 / span 2;
+
+                /* 4. 数字 + span 名字*/
+                grid-column: 1 / span c3;
+                grid-row: 1 / span r3;
+
+                width: auto;
+                height: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item1 item">1</div>
+            <div class="item2 item">2</div>
+            <div class="item3 item">3</div>
+            <div class="item4 item">4</div>
+            <div class="item5 item">5</div>
+            <div class="item6 item">6</div>
+            <div class="item7 item">7</div>
+            <div class="item8 item">8</div>
+        </div>
+    </body>
+</html>

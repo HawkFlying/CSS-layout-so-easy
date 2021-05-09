@@ -107,7 +107,7 @@ Grid 布局(*网格布局*)是 CSS 最新的也是最强大的一种布局方案
 
 ### grid-template
 
-#### `grid-template-columns` 属性 和 `grid-template-rows` 属性
+#### 1. `grid-template-columns` 属性 和 `grid-template-rows` 属性
 
 `grid-template-columns` 属性 和 `grid-template-rows` 属性,用来指定网格的列宽以及行高，以空格分隔，语法结构如下：
 
@@ -171,7 +171,7 @@ Grid 布局(*网格布局*)是 CSS 最新的也是最强大的一种布局方案
 
 ![image-20210508222658446](http://img.seecode.cc//picgo/image-20210508222658446.png)
 
-#### 网格线的名称
+#### 2. 网格线的名称
 
 `grid-template-columns` 属性 和 `grid-template-rows` 属性 里面，还可以使用方括号 `[]` ，指定每一根网格线的名字，方便以后的引用。
 
@@ -218,7 +218,7 @@ Grid 布局(*网格布局*)是 CSS 最新的也是最强大的一种布局方案
 
 ![image-20210508224148105](http://img.seecode.cc//picgo/image-20210508224148105.png)
 
-#### `repeat()` 函数
+#### 3. `repeat()` 函数
 
 有的时候，我们需要编写同样的值，尤其是在网格多的时候，就显得尤为的麻烦，这个时候 `repeat()` 函数就帮助我们解决了这个问题。
 
@@ -258,7 +258,7 @@ Grid 布局(*网格布局*)是 CSS 最新的也是最强大的一种布局方案
 }
 ```
 
-#### `minmax()` 函数
+#### `4. minmax()` 函数
 
 `minmax()` 函数定义了一个长宽范围的闭区间，该函数适用于 CSS Grid 属性中 `grid-template-columns` 和 `grid-template-rows` 语法规则如下：
 
@@ -284,7 +284,7 @@ Grid 布局(*网格布局*)是 CSS 最新的也是最强大的一种布局方案
 
 > 最小`100px`最大`400px`
 
-#### `grid-template-areas` 属性
+#### `5. grid-template-areas` 属性
 
 通过引用 `grid-area` 属性指定的网格区域的名称来定义网格模板。语法结构如下：
 
@@ -457,7 +457,7 @@ grid-template:
 
 ### items 属性
 
-#### `align-items` 属性
+#### 1. `align-items` 属性
 
 沿着**列轴**对齐网格内的内容。语法结构如下：
 
@@ -474,7 +474,7 @@ grid-template:
 - `center`: 内容位于网格区域的垂直中心位置
 - `stretch`: 内容高度占据整个网格区域空间(默认值)
 
-#### `justify-items` 属性
+#### 2. `justify-items` 属性
 
 沿着**行轴**对齐网格内的内容。语法结构如下：
 
@@ -491,7 +491,7 @@ grid-template:
 - `center`: 内容位于网格区域的水平中心位置
 - `stretch`: 内容高度占据整个网格区域空间(默认值)
 
-#### `place-items` 属性
+#### 3. `place-items` 属性
 
 `place-items` 是一个简写属性，使用此属性可以同时设置**列轴**对齐和**行轴**对齐，语法结构如下所示：
 
@@ -562,7 +562,7 @@ grid-template:
 
 ### content 属性
 
-#### `align-content ` 属性
+#### 1. `align-content ` 属性
 
 设置网格容器内的网格沿着**列轴**对齐网格的对齐方式。语法结构如下：
 
@@ -582,7 +582,7 @@ grid-template:
 - `space-between`:在网格项之间设置均等高度空白间隙，其外边缘无间隙
 - `space-evenly`:在每个网格项之间设置均等高度的空白间隙,包括外边缘
 
-#### `justify-content ` 属性
+#### 2. `justify-content ` 属性
 
 设置网格容器内的网格沿着**行轴**对齐网格的对齐方式。语法结构如下：
 
@@ -602,7 +602,7 @@ grid-template:
 - `space-between`:在网格项之间设置均等宽度空白间隙，其外边缘无间隙
 - `space-evenly`:在每个网格项之间设置均等宽度的空白间隙,包括外边缘
 
-#### `place-content` 属性
+#### 3. `place-content` 属性
 
 `place-content` 属性是 `align-content` 和 `justify-content` 的简写属性，，语法结构如下所示：
 
@@ -674,7 +674,7 @@ grid-template:
 
 ### grid-auto 属性
 
-#### `grid-auto-columns` 属性 和 `grid-auto-rows` 属性
+#### 1. `grid-auto-columns` 属性 和 `grid-auto-rows` 属性
 
 该组属性指定自动生成的网络轨道(隐式网络轨道)的大小
 
@@ -682,7 +682,7 @@ grid-template:
 
 它们的写法与`grid-template-columns`和`grid-template-rows`相同。如果不指定此属性，浏览器完全根据单元格内容的大小，决定新增网格的列宽和行高。
 
-#### `grid-auto-flow` 属性
+#### 2. `grid-auto-flow` 属性
 
 该属性控制自动布局算法的工作方式。语法结构如下
 
@@ -715,4 +715,265 @@ grid 是一个CSS简写属性，可以用来设置以下属性：
 ```
 
 > 该语法不易读，在实际开发中并推荐使用该语法。
+
+## 网格项上的属性
+
+### start / end
+
+#### 1. `grid-column-start` 属性、`grid-column-end` 属性、`grid-row-start` 属性、`grid-row-end` 属性
+
+网格项的位置可以通过 `grid-column-start` 、`grid-column-end` 、`grid-row-start` 、`grid-row-end` 这四个属性进行确定。
+
+语法结构如下：
+
+```css
+.item {
+  /* 左边框所在的垂直网格线 */
+  grid-column-start: <number> | <name> | span <number> | span <name> | auto;
+  /* 右边框所在的垂直网格线 */
+  grid-column-end: <number> | <name> | span <number> | span <name> | auto;
+  /* 上边框所在的垂直网格线 */
+  grid-row-start: <number> | <name> | span <number> | span <name> | auto;
+  /* 下边框所在的垂直网格线 */
+  grid-row-end: <number> | <name> | span <number> | span <name> | auto;
+}
+```
+
+**属性值**
+
+- `<number>`: 用数字来指代相应编号的网格线。
+- `<name>`:使用网格线名称来指代相应命名的网格线。
+- `span <number>`: 网格项将跨越指定数量的网格轨道
+- `span <name>`: 网格项将跨越一些轨道，直到碰到指定命名的网格线
+- `auto`: 自动布局，或者自动跨越，或者跨越一个默认的轨道
+
+示例代码如下所示：
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>start / end</title>
+        <link rel="stylesheet" href="./init.css" />
+        <style>
+            .container {
+                background-color: #fffae8;
+                display: grid;
+                width: 920px;
+                height: 820px;
+                margin: 0 auto;
+                grid-template-columns: [c1] 300px [c2] 300px [c3] 300px [c4];
+                grid-template-rows: [r1] 200px [r2] 200px [r3] 200px [r4];
+                gap: 10px;
+            }
+            .item {
+                line-height: 200px;
+                height: 200px;
+            }
+            .item1 {
+                /* 1. 纯数字写法 */
+                grid-column-start: 1;
+                grid-column-end: 3;
+                grid-row-start: 1;
+                grid-row-end: 3;
+
+                /* 2. 纯名字写法 */
+                grid-column-start: c1;
+                grid-column-end: c3;
+                grid-row-start: r1;
+                grid-row-end: r3;
+
+                /* 3. 数字 + span 数字 */
+                grid-column-start: 1;
+                grid-column-end: span 2;
+                grid-row-start: 1;
+                grid-row-end: span 2;
+
+                /* 4. 数字 + span 名字*/
+                grid-column-start: 1;
+                grid-column-end: span c3;
+                grid-row-start: 1;
+                grid-row-end: span r3;
+                width: auto;
+                height: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item1 item">1</div>
+            <div class="item2 item">2</div>
+            <div class="item3 item">3</div>
+            <div class="item4 item">4</div>
+            <div class="item5 item">5</div>
+            <div class="item6 item">6</div>
+            <div class="item7 item">7</div>
+            <div class="item8 item">8</div>
+        </div>
+    </body>
+</html>
+
+```
+
+执行结果如下所示：
+
+![image-20210509194719268](http://img.seecode.cc//picgo/image-20210509194719268.png)
+
+> **值得注意的是**如果没有声明 `end` 则默认将跨域一个轨道
+>
+> 示例代码如下：
+>
+> ```html
+> <!DOCTYPE html>
+> <html lang="en">
+>     <head>
+>         <meta charset="UTF-8" />
+>         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+>         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+>         <title>不声明 end</title>
+>         <link rel="stylesheet" href="./init.css" />
+>         <style>
+>             .container {
+>                 background-color: #fffae8;
+>                 display: grid;
+>                 width: 920px;
+>                 height: 620px;
+>                 margin: 0 auto;
+>                 grid-template-columns: [c1] 300px [c2] 300px [c3] 300px [c4];
+>                 grid-template-rows: [r1] 200px [r2] 200px [r3] 200px [r4];
+>                 gap: 10px;
+>             }
+>             .item { line-height: 200px; height: 200px; }
+>             .item1 {
+>                 grid-column-start: 2;
+>                 width: auto;
+>                 height: auto;
+>             }
+>         </style>
+>     </head>
+>     <body>
+>         <div class="container">
+>             <div class="item1 item">1</div>
+>             <div class="item2 item">2</div>
+>             <div class="item3 item">3</div>
+>             <div class="item4 item">4</div>
+>             <div class="item5 item">5</div>
+>             <div class="item6 item">6</div>
+>             <div class="item7 item">7</div>
+>             <div class="item8 item">8</div>
+>         </div>
+>     </body>
+> </html>
+> 
+> ```
+>
+> 效果图如下：
+>
+> ![image-20210509194917673](http://img.seecode.cc//picgo/image-20210509194917673.png)
+>
+> **网格项如果相互重叠，可以使用 z-index 来控制它们的堆叠顺序**
+>
+> 示例代码如下：
+>
+> ```html
+> <!DOCTYPE html>
+> <html lang="en">
+>     <head>
+>         <meta charset="UTF-8" />
+>         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+>         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+>         <title>堆叠</title>
+>         <link rel="stylesheet" href="./init.css" />
+>         <style>
+>             .container {
+>                 background-color: #fffae8;
+>                 display: grid;
+>                 width: 920px;
+>                 height: 620px;
+>                 margin: 0 auto;
+>                 grid-template-columns: [c1] 300px [c2] 300px [c3] 300px [c4];
+>                 grid-template-rows: [r1] 200px [r2] 200px [r3] 200px [r4];
+>                 gap: 10px;
+>             }
+>             .item { line-height: 200px; height: 200px; }
+>             .item1, .item2 { width: auto; height: auto; }
+>             .item1 {
+>                 grid-column-start: 1;
+>                 grid-column-end: 3;
+>                 grid-row-start: 1;
+>                 grid-row-end: 3;
+>                 /* 通过 z-index 控制堆叠顺序 */
+>                 z-index: 2;
+>             }
+>             .item2 {
+>                 grid-column-start: 2;
+>                 grid-column-end: 4;
+>                 grid-row-start: 1;
+>                 grid-row-end: 3;
+>             }
+>         </style>
+>     </head>
+>     <body>
+>         <div class="container">
+>             <div class="item1 item">1</div>
+>             <div class="item2 item">2</div>
+>             <div class="item3 item">3</div>
+>             <div class="item4 item">4</div>
+>             <div class="item5 item">5</div>
+>             <div class="item6 item">6</div>
+>             <div class="item7 item">7</div>
+>             <div class="item8 item">8</div>
+>         </div>
+>     </body>
+> </html>
+> 
+> ```
+>
+> 效果图如下：
+>
+> ![image-20210509195250297](http://img.seecode.cc//picgo/image-20210509195250297.png)
+
+#### 2. `grid-column` 属性和 `grid-row` 属性
+
+`grid-column` 属性是 `grid-column-start` 、`grid-column-end` 这两个属性的简写。
+
+`grid-row` 属性是 `grid-row-start` 、`grid-row-end` 这两个属性的简写。
+
+语法结构如下所示：
+
+```css
+.item {
+  grid-column: grid-column-start / grid-column-end;
+  grid-row: grid-row-start / grid-row-end;
+}
+```
+
+示例代码如下所示：
+
+```css
+.item1 {
+  /* 1. 纯数字写法 */
+  grid-column: 1 / 3;
+  grid-row: 1 / 3;
+
+  /* 2. 纯名字写法 */
+  grid-column: c1 / c3;
+  grid-row: r1 / r3;
+
+  /* 3. 数字 + span 数字 */
+  grid-column: 1 / span 2;
+  grid-row: 1 / span 2;
+
+  /* 4. 数字 + span 名字*/
+  grid-column: 1 / span c3;
+  grid-row: 1 / span r3;
+}
+```
+
+### grid-area
+
+### self
 
