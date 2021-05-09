@@ -1,0 +1,38 @@
+body {
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    background-color: #fffae8;
+}
+.item {
+    height: 200px;
+    width: 200px;
+    line-height: 200px;
+    text-align: center;
+    font-size: 80px;
+}
+.item1 {
+    background-color: #e6005c;
+}
+.item2 {
+    background-color: #777bce;
+}
+.item3 {
+    background-color: #c9780c;
+}
+.item4 {
+    background-color: #fef3c9;
+}
+.item5 {
+    background-color: #ce3b3b;
+}
+.item6 {
+    background-color: #e666ff;
+}
+.item7 {
+    background-color: #f4ea20;
+}
+.item8 {
+    background-color: #b4a4ca;
+}
