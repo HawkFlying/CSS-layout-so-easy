@@ -4,6 +4,7 @@ body {
 }
 .container {
     background-color: #fffae8;
+    margin: 30px auto;
 }
 .item {
     height: 200px;
