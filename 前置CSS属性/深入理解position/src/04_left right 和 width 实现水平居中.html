@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>left right 和 width 实现水平居中</title>
+        <style>
+            img {
+                position: absolute;
+                right: 0;
+                left: 0;
+                width: 800px;
+                /* 开启决定定位后 margin: auto 是无法实现水平居中的，需要通过 left right 和 width 配合使用 */
+                margin: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <img src="../image/img.jpg" />
+    </body>
+</html>
