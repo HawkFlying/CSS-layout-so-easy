@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>relative 最小化影响原则</title>
+        <style>
+            .container {
+                height: 400px;
+                width: 600px;
+                background-color: #9c27b0;
+                margin: 0 auto;
+            }
+            .item {
+                height: 100px;
+                width: 50px;
+                background-color: #ff7043;
+                line-height: 100px;
+                font-size: 30px;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <!-- 单独创建一个 开启 relative 定位的 父元素-->
+            <div style="position: relative">
+                <!-- 这样不会影响后面元素的定位 -->
+                <div class="item" style="position: absolute; right: 0">1</div>
+            </div>
+            <div class="item">2</div>
+        </div>
+    </body>
+</html>
