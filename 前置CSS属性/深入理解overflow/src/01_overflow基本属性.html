@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>overflow基本属性</title>
+        <style>
+            .main {
+                width: 1200px;
+                display: flex;
+                justify-content: space-between;
+                margin: 0 auto;
+            }
+            .container {
+                height: 210px;
+                width: 260px;
+                background-color: #70a1ff;
+            }
+            img {
+                width: 300px;
+                opacity: 0.7;
+            }
+            .visible {
+                /* 超出部分溢出显示 */
+                overflow: visible;
+            }
+            .hidden {
+                /* 超出部分被隐藏 */
+                overflow: hidden;
+            }
+            .scroll {
+                /* 水平垂直都出现滚动条，可以滚动显示*/
+                overflow: scroll;
+            }
+            .auto {
+                /* 超出部门出现滚动条，未超出部门可以正常显示 */
+                overflow: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div class="container visible"><img src="../image/img.jpg" /></div>
+            <div class="container hidden"><img src="../image/img.jpg" /></div>
+            <div class="container scroll"><img src="../image/img.jpg" /></div>
+            <div class="container auto"><img src="../image/img.jpg" /></div>
+        </div>
+    </body>
+</html>
