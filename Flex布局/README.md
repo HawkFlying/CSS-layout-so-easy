@@ -6,6 +6,14 @@
 
 ## 写在前面
 
+### 文章概述
+
+由于篇幅较长(请谨慎阅读)，下图涵盖了本篇文章的主要知识点
+
+![](http://img.seecode.cc//picgo/Flex%20%E5%B8%83%E5%B1%80%E6%80%BB%E7%BB%93.png)
+
+正文开始
+
 ### 弹性盒子模型是什么
 
 CSS3新增了弹性盒子模型( *Flexible Box*或*FlexBox*)，是一种新的用于在HTML页面实现布局的方式。使得当HTML页面适应不同尺寸的屏幕和不同的设备时，元素是可预测地运行。
@@ -492,7 +500,7 @@ align-content: center| flex-start| flex-end| space-between| space-around| stretc
 - `flex-start`: 各行向伸缩容器的起点位置对齐。
 - `flex-end`: 各行向伸缩容器的终点位置对齐。
 - `space-between`: 各行会平均分布在一行中。
-- `space-around`: 各行会平均分布在一行中， 两端保留-半的空间。
+- `space-around`: 各行会平均分布在一行中， 两端保留一半的空间。
 - `stretch`: 默认值，各行将会伸展以占用额外的空间。
 
 示例代码如下所示：
