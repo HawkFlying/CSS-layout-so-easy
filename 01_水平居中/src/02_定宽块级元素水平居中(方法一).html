@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>定宽块级元素水平居中(方法一)</title>
+    <style>
+      .parent {
+        background: #ff8787;
+      }
+      .child {
+        background: #e599f7;
+        height: 300px;
+        width: 300px;
+        /* 对于定宽的子元素，直接 margin:0 auto; 即可实现水平居中 */
+        margin: 0 auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>设置宽度为 fit-content</title>
+    <style>
+      .parent {
+        background: #ff8787;
+        position: relative;
+        height: 300px;
+        /* 兼容多浏览器 */
+        width: -moz-fit-content;
+        width: -webkit-fit-content;
+        width: fit-content;
+        margin: 0 auto;
+        overflow: hidden;
+      }
+      .child {
+        background: #e599f7;
+        height: 300px;
+        width: 300px;
+        /* 子元素开启浮动 */
+        float: left;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+  </body>
+</html>
