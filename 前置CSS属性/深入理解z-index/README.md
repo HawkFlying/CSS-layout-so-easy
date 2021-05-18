@@ -183,7 +183,7 @@
 
 层叠顺序表示元素发生才层叠时候有着特定的垂直显示循序，HTML 中的层叠水平如下图所示：
 
-![](./image/seven stacking level.png)
+![](http://img.seecode.cc//picgo/seven%20stacking%20level.png)
 
 其意义是**规范元素重叠时的规范**。 
 

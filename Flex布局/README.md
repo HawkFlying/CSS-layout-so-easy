@@ -601,7 +601,7 @@ align-content: center| flex-start| flex-end| space-between| space-around| stretc
 
 执行效果如下
 
-![image-20210510221903192](image/image-20210510221903192.png)
+![image-20210510221903192](http://img.seecode.cc//picgo/image-20210510221903192.png)
 
 > **值得注意的是**该属性对单行弹性盒子模型无效，即：带有 `flex-wrap: nowrap`
 
