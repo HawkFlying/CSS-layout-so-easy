@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>通过float实现(HTML结构与视觉不符)</title>
+    <link rel="stylesheet" href="./init.css" />
+    <style>
+      .left {
+        /* 1. 左列容器开启左浮动 */
+        float: left;
+      }
+      .content {
+        /* 3. 使中间自适应的宽度为父级容器减去两个定宽的列 */
+        width: calc(100%-400px);
+      }
+      .right {
+        /* 2. 右列容器开启右浮动 */
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container clearfix">
+      <div class="left">左</div>
+      <div class="right">右</div>
+      <div class="content">内容</div>
+    </div>
+  </body>
+</html>

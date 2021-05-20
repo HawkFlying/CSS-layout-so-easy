@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>通过position实现</title>
+    <link rel="stylesheet" href="./init.css" />
+    <style>
+      .left {
+        /* 1. 左右两列脱离文档流，并通过偏移的方式到达自己的区域 */
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      .content {
+        /* 2. 使中间自适应的宽度为父级容器减去两个定宽的列 */
+        width: calc(100%-400px);
+        /* 3. 通过外边距将容器往内缩小 */
+        margin-right: 200px;
+        margin-left: 200px;
+      }
+      .right {
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container clearfix">
+      <div class="left">左</div>
+      <div class="content">内容</div>
+      <div class="right">右</div>
+    </div>
+  </body>
+</html>
