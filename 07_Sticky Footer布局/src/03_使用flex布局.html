@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>使用flex布局</title>
+    <link rel="stylesheet" href="./init.css" />
+    <style>
+      .main {
+        /* 开启flex布局 */
+        display: flex;
+        /* 将子元素布局方向修改为垂直排列 */
+        flex-flow: column;
+        /* 设置最小高度为当前视口，使不管中间部分有多高，始终都可以保持在底部 */
+        min-height: 100vh;
+      }
+      .container {
+        /* 设置 中间 部分自适应 */
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <div class="header">header</div>
+      <div class="container">
+        <div class="left">left</div>
+        <div class="content">content</div>
+        <div class="right">right</div>
+      </div>
+      <div class="footer">footer</div>
+    </div>
+  </body>
+</html>

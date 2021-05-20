@@ -1,0 +1,43 @@
+body {
+  margin: 0;
+}
+.container {
+  height: 400px;
+  display: flex;
+}
+.left {
+  height: 400px;
+  width: 200px;
+  background-color: #f759ab;
+}
+.content {
+  height: 400px;
+  background-color: #52c41a;
+  flex: 1;
+}
+.right {
+  height: 400px;
+  width: 200px;
+  background-color: #f759ab;
+}
+.left,
+.content,
+.right {
+  font-size: 70px;
+  line-height: 400px;
+  text-align: center;
+}
+.header {
+  height: 100px;
+  background-color: #70a1ff;
+}
+.footer {
+  height: 100px;
+  background-color: #ff7a45;
+}
+.header,
+.footer {
+  line-height: 100px;
+  font-size: 52px;
+  text-align: center;
+}
