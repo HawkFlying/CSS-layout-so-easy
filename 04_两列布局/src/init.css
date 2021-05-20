@@ -1,0 +1,29 @@
+body {
+  margin: 0;
+}
+.container {
+  height: 400px;
+  background-color: #eebefa;
+}
+.left {
+  height: 400px;
+  width: 200px;
+  background-color: #f783ac;
+  font-size: 70px;
+  line-height: 400px;
+  text-align: center;
+}
+.right {
+  height: 400px;
+  background-color: #c0eb75;
+  font-size: 70px;
+  line-height: 400px;
+}
+/* 清除浮动 */
+.clearfix:after {
+  content: '';
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}

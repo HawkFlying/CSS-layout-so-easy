@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flex方案</title>
+    <link rel="stylesheet" href="./init.css" />
+    <!-- * 该方式左侧的宽度可以由子级撑起 -->
+    <style>
+      .container {
+        display: flex;
+      }
+      .right {
+        flex: 1;
+        /* flex: 1; 表示 flex-grow: 1; 即该项占所有剩余空间 */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">定宽</div>
+      <div class="right">自适应</div>
+    </div>
+  </body>
+</html>

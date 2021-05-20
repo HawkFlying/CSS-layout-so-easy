@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grid方案</title>
+    <link rel="stylesheet" href="./init.css" />
+    <!-- * 该方式左侧的宽度可以由子级撑起 -->
+    <style>
+      .container {
+        display: grid;
+        /* 将其划分为两行，其中一列有本身宽度决定， 一列占剩余宽度*/
+        grid-template-columns: auto 1fr;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="left">定宽</div>
+      <div class="right">自适应</div>
+    </div>
+  </body>
+</html>
