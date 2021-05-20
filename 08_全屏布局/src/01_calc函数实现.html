@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./init.css" />
+    <title>calc函数实现</title>
+    <style>
+      .content {
+        overflow: hidden;
+        /* 通过 calc 计算容器的高度 */
+        height: calc(100vh - 200px);
+      }
+      .left {
+        height: 100%;
+      }
+      .right {
+        /* 如果超出出现滚动条 */
+        overflow: auto;
+        height: 100%;
+      }
+      .right-in {
+        /* 假设容器内有500px的元素 */
+        height: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">header</div>
+      <div class="content">
+        <div class="left">导航</div>
+        <div class="right">
+          <div class="right-in">自适应，超出高度出现滚动条</div>
+        </div>
+      </div>
+      <div class="footer">footer</div>
+    </div>
+  </body>
+</html>

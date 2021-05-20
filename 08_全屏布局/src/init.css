@@ -1,0 +1,40 @@
+body {
+  margin: 0;
+}
+body,
+html,
+.container {
+  height: 100vh;
+  box-sizing: border-box;
+  text-align: center;
+  overflow: hidden;
+}
+.content {
+  background-color: #52c41a;
+  /* * 中间部门的布局可以参考 两列 三列 布局 */
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+.left {
+  width: 240px;
+  background-color: #52c41a;
+  font-size: 80px;
+  line-height: calc(100vh - 200px);
+}
+.right {
+  background-color: #f759ab;
+  font-size: 60px;
+}
+.header {
+  height: 100px;
+  background-color: #70a1ff;
+}
+.footer {
+  height: 100px;
+  background-color: #ff7a45;
+}
+.header,
+.footer {
+  line-height: 100px;
+  font-size: 52px;
+}
