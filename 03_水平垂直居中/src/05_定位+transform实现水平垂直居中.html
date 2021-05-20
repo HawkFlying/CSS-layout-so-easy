@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>定位+transform实现水平垂直居中</title>
+    <!-- 引入公共样式 -->
+    <link rel="stylesheet" href="./init.css" />
+    <style>
+      .parent {
+        /* 1. 使子元素相对于本元素定位 */
+        position: relative;
+      }
+      .child {
+        /* 2. 开启绝对定位 */
+        position: absolute;
+        /* 3. 设置该元素的偏移量，值为 50%*/
+        left: 50%;
+        top: 50%;
+        /* 通过translate反向便宜的方式，实现居中 */
+        transform: translate(-50%, -50%);
+        /* 
+          实现原理：left 相对于父级进行左偏偏移，50%也就是 父级宽度 500px 的一半，也就是 250px
+          translate同样是进行偏移，与之不同的是，该方式参照的是当前元素，X轴偏移-50%的话，就是300px的50%，也就是 150px，
+          最终 子元素距离父元素边距为 100px。即 100px 3000px  100px  最终实现了居中。
+        */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="parent">
+      <div class="child"></div>
+    </div>
+  </body>
+</html>
