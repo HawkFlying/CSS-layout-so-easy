@@ -1,43 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>绝对定位的方式实现</title>
-    <link rel="stylesheet" href="./init.css" />
-    <style>
-      /* 1. 设置最外层容器为100% */
-      html,
-      body {
-        height: 100%;
-      }
-      /* 2. 让左右元素相对于该容器进行定位，并设置最小高度为100% */
-      .main {
-        position: relative;
-        min-height: 100%;
-      }
-      /* 在中间区域设置 padding-bottom 为footer 的高度 */
-      .container {
-        padding-bottom: 100px;
-      }
-      /* 由于开启了绝对定位，宽度成了自适应，设置为100% bottom:0 始终保持底部 */
-      .footer {
-        position: absolute;
-        width: 100%;
-        bottom: 0;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="main">
-      <div class="header">header</div>
-      <div class="container">
-        <div class="left">left</div>
-        <div class="content">content</div>
-        <div class="right">right</div>
-      </div>
-      <div class="footer">footer</div>
-    </div>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>绝对定位的方式实现</title>
+        <link rel="stylesheet" href="./init.css" />
+        <style>
+            /* 1. 设置最外层容器为100% */
+            html,
+            body {
+                height: 100%;
+            }
+            /* 2. 让子元素元素相对于容器元素进行定位，并设置容器元素最小高度为100% */
+            .main {
+                position: relative;
+                min-height: 100%;
+            }
+            /* 3. 在中间区域设置 padding-bottom 为footer 的高度 */
+            .container {
+                padding-bottom: 100px;
+            }
+            /* 由于开启了绝对定位，宽度成了自适应，设置为100% bottom:0 始终保持底部 */
+            .footer {
+                position: absolute;
+                width: 100%;
+                bottom: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main">
+            <div class="header">header</div>
+            <div class="container">
+                <div class="left">left</div>
+                <div class="content">content</div>
+                <div class="right">right</div>
+            </div>
+            <div class="footer">footer</div>
+        </div>
+    </body>
 </html>
