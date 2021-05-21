@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./init.css" />
-    <title>grid方案</title>
-    <style>
-      .container {
-        /* 开启grid布局 */
-        display: grid;
-        grid-template-rows: auto 1fr auto;
-      }
-      .content {
-        /* 如果超出出现滚动条 */
-        overflow: auto;
-      }
-      .right-in {
-        /* 假设容器内有500px的元素 */
-        height: 500px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="header">header</div>
-      <div class="content">
-        <div class="left">导航</div>
-        <div class="right">
-          <div class="right-in">自适应，超出高度出现滚动条</div>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="./init.css" />
+        <title>grid方案</title>
+        <style>
+            .container {
+                /* 开启grid布局 */
+                display: grid;
+                grid-template-rows: auto 1fr auto;
+            }
+            .content {
+                /* 如果超出出现滚动条 */
+                overflow: auto;
+            }
+            .right-in {
+                /* 假设容器内有500px的元素 */
+                height: 500px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">header</div>
+            <div class="content">
+                <div class="left">导航</div>
+                <div class="right">
+                    <div class="right-in">自适应，超出高度出现滚动条</div>
+                </div>
+            </div>
+            <div class="footer">footer</div>
         </div>
-      </div>
-      <div class="footer">footer</div>
-    </div>
-  </body>
+    </body>
 </html>
